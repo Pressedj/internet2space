@@ -8,11 +8,13 @@
 My learning was focused on sending queries to NASA, and making the user experience a bit more seamless via the fade animations during page load.
 
 ## Optimizations
-When I improve this project, I would update my media queries and would focus on a mobile-first approach. I would add an updating list to keep track of days users have selected.
+When I improve this project, I would update my media queries and would focus on a mobile-first approach to gain familiarity with it. Additionally 
+I would add an updating list to keep track of days users have selected.
 
 ## Lessons Learned:
 
-Remember to review and update media queries, making sure everyone can see your content, if not the app will only render correctly when users have a screen size similar to the test enviroment.
+Remember to review and update media queries, making sure everyone can see your content, 
+if not the app will only render correctly when users have a screen size similar to the test enviroment.
 
 
 

@@ -3,17 +3,13 @@
 document.querySelector('iframe').style.display = 'none'
 document.querySelector('#info').style.display = 'none'
 
-document.querySelector('button').addEventListener('click', getFetch)
+document.querySelector('button').addEventListener('click', check)
 document.querySelector('#nasaImg').addEventListener('click', showModal)
-
 function getFetch() {
     fade('body')
     document.querySelector('h1').style.display = 'none'
-
-    const choice = document.querySelector('#dates').value
-    console.log(choice)
-    const url = 'https://api.nasa.gov/planetary/apod?api_key=BUEQx41gEhdJDQmIfJmNWjuxyIfM4DSAEHTfL9a2&date=' + choice
-
+    }
+function urlData(url){
     fetch(url)
         
         .then(res => res.json()) // parse response as JSON
@@ -40,8 +36,19 @@ function getFetch() {
         .catch(err => {
             console.log(`error ${err}s`)
         });
+    }
+function check(){
+    const choice = document.querySelector('#dates').value
+    let dayArray = choice.split('-')
+    if (Number(dayArray[0]) >= 1996){
+        const url = 'https://api.nasa.gov/planetary/apod?api_key=BUEQx41gEhdJDQmIfJmNWjuxyIfM4DSAEHTfL9a2&date=' + choice
+        document.querySelector('#check').innerHTML = ''
+        getFetch()
+        urlData(url)
+    }else{
+        document.querySelector('#check').innerHTML = 'Choose any day between 1996 to today'
+    }
 }
-
 function showModal() {
     var img = document.getElementById("myImg");
     var modal = document.getElementById("myModal");

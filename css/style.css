@@ -185,3 +185,8 @@ iframe {
         width: 75%;
     }
 }
+
+/*font*/
+#check {
+    color: red;
+}

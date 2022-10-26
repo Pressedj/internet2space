@@ -1,0 +1,372 @@
+/* dti analysis raw data and craig to do but cant count on to have finished
+nick did his own analysis with nick
+7 antibodies in bottles phospho tau */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html{
+    background: black;
+    background-image: url(../img/star.gif);
+    background-repeat: repeat;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+root{
+    --player1: rgb(117,186,201);
+    --player2: rgba(35,76,100,.8);
+}
+/*
+
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/*
+  ========================================
+Layout
+  ========================================
+*/
+body{
+    width: 100%;
+    
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+/* #main, #title{
+    width: 30%;
+    min-height: 20vh;
+    border: solid 20px white; 
+    display:flex;
+    flex-wrap: wrap;
+    align-content: center;
+} */
+#text{
+    width: 33%;
+    height: 95vh;
+    padding: 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+#text #title{
+    height: 35%;
+    border: double 5px rgb(117,186,201);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+#title pre{
+    width: 100%;
+    height: 90%;
+    font-size : .45vw;
+
+}
+
+#main {
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+#info{
+    height: 80%;
+}
+#info h3{
+    padding: .8rem 0 1rem .5rem;
+    height: 25%;
+    border-left: solid 1px rgb(117,186,201);
+    border-right: solid 1px rgb(117,186,201);
+    background: rgb(35,76,100,1);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+}
+#info p{
+    max-height: 75%;
+    padding: .5rem;
+    border: solid 1px rgb(117,186,201);
+    overflow: hidden;
+    scrollbar-color:  rgb(117,186,201) rgba(15, 51, 71, 0.8);
+    transition: overflow-y 3s;
+    transition-timing-function: ease-in;
+    background: rgb(35,76,100,1);
+
+     }
+#info p:hover{
+    overflow-y: scroll;
+
+}
+.card{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.instructions{
+    padding: .5rem;
+    background: rgb(35,76,100,1);
+    border: solid 1px rgb(117,186,201);
+
+}
+.instructions p{
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 30%;
+}
+.user-input{
+    display: flex;
+    justify-content: space-around;
+}
+#media-container{
+    width: 65%;
+    height: 90vh;
+    /* border: solid 20px white;  */
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+
+}
+#resultContainer img {
+    width: 100%;
+    margin: auto;
+}
+
+/* .slideshow-container{
+
+}
+
+
+#siteContainer iframe {
+    width: 98%;
+}
+
+
+*/
+.slideshow-container img{
+    width: 100%;
+    height: 88vh;
+}
+
+.fill{
+    object-fit: contain;
+}
+
+/*
+  ========================================
+font
+  ========================================
+*/
+body{
+    color: white;
+    font-family: monospace;
+}
+#title h1{
+    margin: 0 auto;
+    font-size: 1.5vw;
+    width: 100%;
+    text-align: center;
+
+ }
+
+ #info h3{
+    font-size: 1.5rem;
+ }
+
+ #info p{
+    font-size: 1.2rem;
+ }
+.instruction-text{
+    font-size: 1rem;
+    text-align: center;
+}
+ input#dates, button#button{
+    font-size: .8rem
+ }
+ /*
+  ========================================
+                INPUT / BUTTONS         
+  ========================================
+*/
+
+input#dates{
+    background: rgb(117,186,201);
+    width: 50%;
+    border: 1px solid black;
+
+ }
+
+button#button, #big-button{
+  appearance: none;
+  background-color: rgb(117,186,201);
+  border: 2px solid #1A1A1A;
+  box-sizing: border-box;
+  color: #3B3B3B;
+  cursor: pointer;
+  display: inline-block;
+  font-family: monospace;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  min-height: 60px;
+  min-width: 0;
+  outline: none;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  will-change: transform;
+}
+button#button{
+    width: 30%;
+    height: 4.5vh;
+    min-height: 10%;
+    padding: 0;
+    text-align: center;
+}
+#big-button{
+    margin-top: 1vh;
+    height: 40%;
+
+}
+button#button:disabled, #big-button:disabled {
+  pointer-events: none;
+}
+
+button#button:hover, #big-button:hover {
+  color: #fff;
+  background-color: rgba(17, 62, 88, 1);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+/* button#button */ #big-button:active {
+  box-shadow: none;
+  opacity: 0;
+  transform: translateY(0);
+}
+
+ /*
+  ========================================
+                MEDIA QUERY      
+  ========================================
+*/
+
+@media (max-width: 750px) { 
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+    
+    }
+    #text #title{
+        display: none;
+    }
+    #text{
+        width: 100%;
+        height: inherit;
+        padding: .5rem;
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+    
+    }
+    #info h3{
+        border: solid 1px rgb(117,186,201);
+    }
+    #big-button{
+        margin-top: 1vh;
+        width: 95vw;
+        position:relative;
+
+        height: 40%;
+    }
+
+    #media-container{
+        width: 100%;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
